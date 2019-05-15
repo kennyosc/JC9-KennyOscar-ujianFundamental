@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soal 1 - Drawing Tools</title>
+</head>
+<body>
+    <h1>Drawing Tools</h1>
+    <p>1. Persegi</p>
+    <p>2. Segitiga Siku2 Rata Kiri</p>
+    <p>3.Segitiga Siku2 Rata Kanan</p>
+    <p>Jenis Bangunan:</p>
+    <p><input type="text" id="jenisBangunan"></p>
+    <p>Ukuran</p>
+    <p><input type="text" id="ukuran"></p>
+    <p><input type="button" value="Lihat" onclick="lihat()"></p>
+    <p id="bintang"></p>
+
+    <script>
+        function lihat(fn,num){
+            fn = document.getElementById("jenisBangunan").value
+            num = document.getElementById("ukuran").value
+            var bintang=""
+
+            if(fn == 1){
+                for(var i = 0; i<num; i++){
+                    for(var j = 0; j<num; j++){
+                        bintang+=" * "
+                    }
+                    bintang+="<br>"
+                }
+            } else if(fn == 2){
+                for(var i =0; i<=num; i++){
+                    for(var j = 0; j<i;j++){
+                        bintang+=" * "
+                    }
+                    bintang+="<br>"
+                }
+            } else if(fn == 3){
+                for(var i = 0; i<=num; i++){
+                    for(var j=0; j<num-i;j++){
+                        bintang+="&nbsp&nbsp&nbsp"
+                    }
+                    for(var k=0; k<i;k++){
+                        bintang+=" * "
+                    }
+                    bintang+="<br>"
+                }
+            } else{
+                bintang+="Mohon masukkan angka 1-3"
+            }
+
+            console.log(bintang)
+            document.getElementById("bintang").innerHTML = bintang
+            
+
+        }
+    </script>
+</body>
+</html>

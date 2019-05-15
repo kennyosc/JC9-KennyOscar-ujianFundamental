@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soal 2</title>
+</head>
+<body>
+    
+    <script>
+        var arr = []
+        
+        do{
+            var input = Number(prompt("Masukkan angka"))
+            if(Number.isInteger(input)){
+                arr.push(input)
+            }
+
+        }while(Number.isInteger(input))
+
+        var hasil = arr.sort((x,y)=>{
+            return x-y
+        })
+
+        console.log(hasil)
+
+        var max = 0
+        var min = 0
+
+        for(var i = 0; i < hasil.length; i++){
+            if(hasil.length == 1){
+                max = hasil[i]
+                min = hasil[i]
+            } else{
+                if(hasil[i] > max) {
+                max = hasil[i]
+                } 
+
+                for(var j = 0; j < 1; j++){
+                    if(hasil[j] < hasil[i]){
+                    min = hasil[j]
+                    }
+                }
+            }
+
+        }
+        
+        console.log("Nilai tertinggi : " + max +"\n" +"Nilai terendah : " + min)
+
+        </script>
+</body>
+</html>
